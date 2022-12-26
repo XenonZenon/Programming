@@ -6,11 +6,12 @@ source_dir := $(directory)/source
 objects := test.o
 
 build: $(objects)
-	ld $(build_dir)/test.o \
+	gcc $(build_dir)/test.o \
+			$(source_dir)/callsum.c \
 			-o $(build_dir)/$(program)
 
 test.o:
-	nasm -f elf64 $(source_dir)/test.asm \
+	nasm -felf64 $(source_dir)/test.asm \
 			-o $(build_dir)/test.o
 
 clean:

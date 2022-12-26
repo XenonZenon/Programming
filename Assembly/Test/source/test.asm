@@ -1,17 +1,16 @@
-global _start
+  global sum
+  section .text
 
-section .text
+sum:
+  xorpd xmm0, xmm0
+  cmp rsi, 0
+  je done
 
-_start:
-  mov rax, 1
-  mov rdi, 1
-  mov rsi, message
-  mov rdx, 13
-  syscall
-  mov rax, 60
-  xor rdi, rdi
-  syscall
+next:
+  addsd xmm0, [rdi]
+  add rdi, 8
+  dec rsi
+  jnz next
 
-  section .data
-
-message: db "Hello, World", 10
+done:
+  ret
