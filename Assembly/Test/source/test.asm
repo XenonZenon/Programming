@@ -1,16 +1,17 @@
-  global sum
+  global factorial
+
   section .text
 
-sum:
-  xorpd xmm0, xmm0
-  cmp rsi, 0
-  je done
+factorial:
+  cmp rdi, 1
+  jnbe L1
+  mov rax, 1
+  ret
 
-next:
-  addsd xmm0, [rdi]
-  add rdi, 8
-  dec rsi
-  jnz next
-
-done:
+L1:
+  push rdi
+  dec rdi
+  call factorial
+  pop rdi
+  imul rax, rdi
   ret

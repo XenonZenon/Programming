@@ -7,7 +7,7 @@ objects := test.o
 
 build: $(objects)
 	gcc $(build_dir)/test.o \
-			$(source_dir)/callsum.c \
+			$(source_dir)/callfactorial.c \
 			-o $(build_dir)/$(program)
 
 test.o:
