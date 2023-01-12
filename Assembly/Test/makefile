@@ -1,4 +1,4 @@
-program := Test
+program := Test.sid
 directory := ../Test
 build_dir := $(directory)/build
 source_dir := $(directory)/source
@@ -6,12 +6,11 @@ source_dir := $(directory)/source
 objects := test.o
 
 build: $(objects)
-	gcc $(build_dir)/test.o \
-			$(source_dir)/callfactorial.c \
+	ld $(build_dir)/test.o \
 			-o $(build_dir)/$(program)
 
 test.o:
-	nasm -felf64 $(source_dir)/test.asm \
+	nasm -f elf64 $(source_dir)/test.asm \
 			-o $(build_dir)/test.o
 
 clean:
