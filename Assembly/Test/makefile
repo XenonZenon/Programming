@@ -1,4 +1,4 @@
-program := Test.sid
+program := Test.ugat
 directory := ../Test
 build_dir := $(directory)/build
 source_dir := $(directory)/source
@@ -15,7 +15,7 @@ test.o:
 
 clean:
 	rm $(build_dir)/*.o
-	rm $(build_dir)/Test
+	rm $(build_dir)/Test.ugat
 
 run:
 	$(build_dir)/$(program)
