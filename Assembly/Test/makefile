@@ -7,7 +7,7 @@ objects := test.o
 
 build: $(objects)
 	ld $(build_dir)/test.o \
-			-o $(build_dir)/$(program)
+		-o $(build_dir)/$(program)
 
 test.o:
 	nasm -f elf64 $(source_dir)/test.asm \
