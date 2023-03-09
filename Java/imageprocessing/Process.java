@@ -14,13 +14,14 @@ public class Process
     int width = 800;
     int height = 600;
 
-    String imagename = "baybayin";
+    // String imagename = "baybayin";
+    // Sepia(imagename, imagename + "-sepia", width, height);
+    // RedImage(imagename, imagename + "-red", width, height);
+    // GreenImage(imagename, imagename + "-green", width, height);
+    // BlueImage(imagename, imagename + "-blue", width, height);
+    // Negative(imagename, imagename + "-negative", width, height);
 
-    Sepia(imagename, imagename + "-sepia", width, height);
-    RedImage(imagename, imagename + "-red", width, height);
-    GreenImage(imagename, imagename + "-green", width, height);
-    BlueImage(imagename, imagename + "-blue", width, height);
-    Negative(imagename, imagename + "-negative", width, height);
+    RandomImage("random-image", width, height);
   }
 
   public static BufferedImage ReadImage(BufferedImage image, int width, int height, String name)
@@ -253,4 +254,31 @@ public class Process
     WriteImage(image, output);
     image = null;
   }
+
+  public static void RandomImage(String output, int width, int height)
+  {
+    BufferedImage image = null;
+    image = new BufferedImage(width, height, BufferedImage.TYPE_INT_ARGB);
+    // create random values pixel by pixel
+    for (int y = 0; y < image.getHeight(); y++)
+    {
+        for (int x = 0; x < image.getWidth(); x++)
+        {
+              // generating values less than 256
+            int a = (int)(Math.random()*256);
+            int r = (int)(Math.random()*256);
+            int g = (int)(Math.random()*256);
+            int b = (int)(Math.random()*256);
+
+              //pixel
+            int p = (a<<24) | (r<<16) | (g<<8) | b;
+
+            image.setRGB(x, y, p);
+        }
+    }
+    WriteImage(image, output);
+    image = null;
+  }
+
+
 }
