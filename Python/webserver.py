@@ -1,7 +1,6 @@
 from http.server import BaseHTTPRequestHandler, HTTPServer
 import time
 
-import time
 hostName = "localhost"
 serverPort = 8080 #You can choose any available port; by default, it is 8000
 Class MyServer(BaseHTTPRequestHandler):
