@@ -1,4 +1,4 @@
-# Collection of Programming Codes of Assembly, C++, Java, Python, PHP
+# Collection of Programming Codes of Assembly, C++, Java, Python, PHP, Javascript
 
 
 <ul>
