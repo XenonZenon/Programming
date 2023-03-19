@@ -6,9 +6,7 @@ namespace TestCode
   {
     static void Main(string[] args)
     {
-      Console.WriteLine("Enter username: ");
-      string username = Console.ReadLine();
-      Console.WriteLine("Username is: " + username);
+      Console.WriteLine("Hello World!");
     }
   }
 }
